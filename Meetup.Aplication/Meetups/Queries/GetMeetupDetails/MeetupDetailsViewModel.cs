@@ -11,7 +11,6 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
     public class MeetupDetailsViewModel : IMapWith<Meetup> //вьюшку деталей митапа мапить с классом митап
     {
-        // класс содержит те  же поля , что и класс митап, кроме айди пользователя
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

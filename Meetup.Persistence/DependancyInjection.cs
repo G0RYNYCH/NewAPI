@@ -5,10 +5,10 @@ using Meetups.Aplication.Interfaces;
 
 namespace Meetups.Persistence
 {
-    //исп. метод расширения добавление контекста бд в веб приложение (метод будет использоваться для настройки веб апи)
+    //use extention method to add db context into the app
     public static class DependancyInjection
     {
-        // добавлят использование контекста бд и регистрирует его 
+        // add db context usage and register it
         public static IServiceCollection AddPersistance (this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("DbConnection");

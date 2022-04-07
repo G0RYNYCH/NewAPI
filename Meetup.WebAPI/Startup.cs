@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Meetup.WebAPI
 {
-    //конфигурация приложения
+    //configuration of the app
     public class Startup
     {
         public IConfiguration Configuration { get; }//?
@@ -32,11 +32,11 @@ namespace Meetup.WebAPI
         {
             services.AddAutoMapper(configure =>
             {
-                configure.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));//информация о текущей сборке
+                configure.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));// info about current assembly
                 configure.AddProfile(new AssemblyMappingProfile(typeof(IMeetupsDbContext).Assembly));
             });
             services.AddApplication();
-            services.AddPersistance(Configuration);// для передачи конфигурации из аппсетингс получаем ее через конструктор
+            services.AddPersistance(Configuration);// get configuration through constructor and pass to the mrthod
             services.AddCors(options => 
             {
                 options.AddPolicy("AllowAll", policy =>
@@ -49,7 +49,7 @@ namespace Meetup.WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        // указываем здесь, что будет использовать приложение, причем порядок записи имеет значение.
+        // we indicate here what the application will use (the order matters)
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -58,7 +58,7 @@ namespace Meetup.WebAPI
             }
 
             app.UseRouting();
-            app.UseHttpsRedirection();// перенапрвление с http на https
+            app.UseHttpsRedirection();// change http to https
             app.UseCors("AllowAll");
 
             app.UseEndpoints(endpoints =>

@@ -9,13 +9,13 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
-{// класс на основании того, что неабходимо для создания митапа, содержит в себе логику для создания 
-    public class CreateMeetupCommandHandler : IRequestHandler<CreateMeetupCommand, Guid> //указываем интерфейсу тип запроса и тип ответ соответственно
+{
+    public class CreateMeetupCommandHandler : IRequestHandler<CreateMeetupCommand, Guid> //specify the type of request and type of response to the interface, respectively
     {
-        private readonly IMeetupsDbContext _dbContext;//для сохранения изменений сделаем внедрениение зависимости на контекс бд в данный класс через конструктор
+        private readonly IMeetupsDbContext _dbContext;//to save the changes, we will inject the dependency on the database context into this class through the constructor
 
         public CreateMeetupCommandHandler(IMeetupsDbContext dbContext) => _dbContext = dbContext;
-        //логика создания содержится в методе hendle
+        //the creation logic is contained in the handle method
         public async Task<Guid> Handle(CreateMeetupCommand request, CancellationToken cancellationToken)
         {
             var meetup = new Meetup

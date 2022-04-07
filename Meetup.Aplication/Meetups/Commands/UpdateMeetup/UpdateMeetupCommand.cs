@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
 {
-    //все, что нужно для обновления митапа
+    //everything needed to update the meetup
     public class UpdateMeetupCommand : IRequest
     {
         public Guid UserId { get; set; }

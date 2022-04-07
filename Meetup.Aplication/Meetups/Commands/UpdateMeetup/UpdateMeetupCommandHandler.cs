@@ -18,7 +18,7 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
 
         public UpdateMeetupCommandHandler(IMeetupsDbContext dbContext) => _dbContext = dbContext;
 
-        //Unit - это тип, означающий пустой ответ
+        //Unit - is a type meaning an empty response
         public async Task<Unit> Handle(UpdateMeetupCommand request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Meetups.FirstOrDefaultAsync(meetup => meetup.Id == request.Id, cancellationToken);

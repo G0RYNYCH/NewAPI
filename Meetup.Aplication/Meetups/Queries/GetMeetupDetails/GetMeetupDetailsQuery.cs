@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
-    //запрос для получения деталей митапа
+    //a request to to get meetup's details
     public class GetMeetupDetailsQuery : IRequest<MeetupDetailsViewModel>
     {
         public Guid UserId { get; set; }
