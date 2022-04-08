@@ -37,6 +37,7 @@ namespace Meetup.WebAPI
             });
             services.AddApplication();
             services.AddPersistance(Configuration);// get configuration through constructor and pass to the mrthod
+            services.AddControllers();
             services.AddCors(options => 
             {
                 options.AddPolicy("AllowAll", policy =>
