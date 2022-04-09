@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
+using Meetups.Aplication.Common.Behavior;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,9 +13,11 @@ namespace Meetups.Aplication
 {
     public static class DependancyInjection
     {
-        public static IServiceCollection AddApplication (this IServiceCollection services)
+        public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             return services;
         }
     }

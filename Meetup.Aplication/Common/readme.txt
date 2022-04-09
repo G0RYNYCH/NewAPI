@@ -1,0 +1,1 @@
+﻿The "Common" folder contains everything related to behavior, exceptions, mapping.
