@@ -15,6 +15,7 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
         private readonly IMeetupsDbContext _dbContext;//to save the changes, we will inject the dependency on the database context into this class through the constructor
 
         public CreateMeetupCommandHandler(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+
         //the creation logic is contained in the handle method
         public async Task<Guid> Handle(CreateMeetupCommand request, CancellationToken cancellationToken)
         {

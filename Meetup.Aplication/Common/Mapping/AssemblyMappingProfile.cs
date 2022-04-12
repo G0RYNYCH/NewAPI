@@ -12,10 +12,7 @@ namespace Meetups.Aplication.Common.Mapping
     {
         public AssemblyMappingProfile(Assembly assembly) => ApplyMappingFromAssembly(assembly);
 
-        /// <summary>
-        /// This method scaning the assebly and searching any types that emplement interface IMapWith 
-        /// </summary>
-        /// <param name="assembly"></param>
+        // This method scaning the assebly and searching any types that emplement interface IMapWith
         private void ApplyMappingFromAssembly(Assembly assembly)
         {
             var typesThatImplementIMapWith = assembly.GetExportedTypes()

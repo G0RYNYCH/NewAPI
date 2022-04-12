@@ -2,10 +2,7 @@
 
 namespace Meetups.Aplication.Common.Mapping
 {
-    /// <summary>
-    /// Interface with default implementation. Mapping method will create configuration from type T to purpouse type.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
+    // Interface with default implementation. Mapping method will create configuration from type T to purpose type.    
     public interface IMapWith<T>
     {
         void Mapping(Profile profile) => profile.CreateMap(typeof(T), GetType());
