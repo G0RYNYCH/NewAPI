@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 
 namespace Meetups.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     public class MeetupController : BaseController
     {
         private readonly IMapper _mapper;

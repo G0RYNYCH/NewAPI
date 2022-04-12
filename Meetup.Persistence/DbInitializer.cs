@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace Meetups.Persistence
     {
         public static void Initialize (MeetupsDbContext context)
         {
-            context.Database.EnsureCreated();
+            context.Database.Migrate();
         }
     }
 }

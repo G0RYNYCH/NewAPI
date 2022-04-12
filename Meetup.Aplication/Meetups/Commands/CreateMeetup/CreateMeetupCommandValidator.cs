@@ -11,7 +11,7 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
     {
         public CreateMeetupCommandValidator()
         {
-            RuleFor(createMeetupCommand => createMeetupCommand.UserId).NotEqual(Guid.Empty);
+            //RuleFor(createMeetupCommand => createMeetupCommand.UserId).NotEqual(Guid.Empty);
             RuleFor(createMeetupCommand => createMeetupCommand.Name).NotEmpty().MaximumLength(50);
             RuleFor(createMeetupCommand => createMeetupCommand.Description).NotEmpty().MaximumLength(200);
             RuleFor(createMeetupCommand => createMeetupCommand.Place).NotEmpty().MaximumLength(50);

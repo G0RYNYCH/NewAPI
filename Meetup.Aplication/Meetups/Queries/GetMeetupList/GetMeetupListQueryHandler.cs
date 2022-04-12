@@ -26,7 +26,6 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupList
         public async Task<MeetupListViewModel> Handle(GetMeetupListQuery request, CancellationToken cancellationToken)
         {
             var meetupQuery = await _dbContext.Meetups
-                .Where(meetup => meetup.UserId == request.UserId)
                 .ProjectTo<MeetupDto>(_mapper.ConfigurationProvider)//метод расширения из библиотеки, который проецирует коллекцию в соостветствии с заданной конфигурацией
                 .ToListAsync(cancellationToken);
 

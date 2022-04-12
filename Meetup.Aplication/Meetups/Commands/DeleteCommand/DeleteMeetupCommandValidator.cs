@@ -12,7 +12,7 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
         public DeleteMeetupCommandValidator()
         {
             RuleFor(deleteMeetupCommand => deleteMeetupCommand.Id).NotEqual(Guid.Empty);
-            RuleFor(deleteMeetupCommand => deleteMeetupCommand.UserId).NotEqual(Guid.Empty);
+            //RuleFor(deleteMeetupCommand => deleteMeetupCommand.UserId).NotEqual(Guid.Empty);
         }
     }
 }

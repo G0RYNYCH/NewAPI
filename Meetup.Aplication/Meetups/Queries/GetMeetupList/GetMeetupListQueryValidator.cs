@@ -11,7 +11,7 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupList
     {
         public GetMeetupListQueryValidator()
         {
-            RuleFor(x => x.UserId).NotEqual(Guid.Empty);
+           // RuleFor(x => x.UserId).NotEqual(Guid.Empty);
         }
     }
 }
