@@ -4,15 +4,12 @@ using Meetups.Aplication.Interfaces;
 using Meetups.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
+using System;
+using System.IO;
 
 namespace Meetup.WebAPI
 {
@@ -47,6 +44,7 @@ namespace Meetup.WebAPI
                     policy.AllowAnyOrigin();
                 });
             });
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +56,12 @@ namespace Meetup.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(configuration =>
+            {
+                configuration.RoutePrefix = string.Empty;
+                configuration.SwaggerEndpoint("swagger/v1/swagger.json", "Meetups API"); //default adress
+            });
             app.UseRouting();
             app.UseHttpsRedirection();// change http to https
             app.UseCors("AllowAll");
