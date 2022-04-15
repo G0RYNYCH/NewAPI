@@ -11,9 +11,7 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
     //everything needed to update the meetup
     public class UpdateMeetupCommand : IRequest
     {
-        public Guid UserId { get; set; }
         public Guid Id { get; set; }
-
         public string Name { get; set; }
         public string Description { get; set; }
         public string Speaker { get; set; }

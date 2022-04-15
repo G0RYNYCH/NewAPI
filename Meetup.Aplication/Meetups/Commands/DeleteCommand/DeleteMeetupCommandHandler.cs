@@ -22,7 +22,7 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
         {
             var entity = await _dbContext.Meetups.FindAsync(new object[] { request.Id }, cancellationToken);
 
-            if (entity == null || entity.UserId != request.UserId)
+            if (entity == null)
             {
                 throw new NotFoundException(nameof(Meetup), request.Id);
             }

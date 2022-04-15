@@ -13,7 +13,7 @@ namespace Meetups.Persistence
         {
             var connectionString = configuration.GetConnectionString("DbConnection");
 
-            services.AddDbContext<MeetupsDbContext>(options => 
+            services.AddDbContext<MeetupsDbContext>(options =>
             {
                 options.UseNpgsql(connectionString, x => x.MigrationsAssembly("Meetups.Persistence"));
             });

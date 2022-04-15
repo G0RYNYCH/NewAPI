@@ -9,7 +9,6 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
 {
     public class DeleteMeetupCommand : IRequest
     {
-        public Guid UserId { get; set; }
         public Guid Id { get; set; }
     }
 }

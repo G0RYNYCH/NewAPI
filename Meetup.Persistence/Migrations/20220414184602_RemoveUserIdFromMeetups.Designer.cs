@@ -3,15 +3,17 @@ using System;
 using Meetups.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Meetups.Persistence.Migrations
 {
     [DbContext(typeof(MeetupsDbContext))]
-    partial class MeetupsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220414184602_RemoveUserIdFromMeetups")]
+    partial class RemoveUserIdFromMeetups
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

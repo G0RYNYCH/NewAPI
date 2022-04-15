@@ -8,7 +8,5 @@ using System.Threading.Tasks;
 namespace Meetups.Aplication.Meetups.Queries.GetMeetupList
 {
     public class GetMeetupListQuery : IRequest<MeetupListViewModel>
-    {
-        public Guid UserId { get; set; }
-    }
+    { }
 }

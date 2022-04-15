@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Meetups.WebAPI.Models
 {
     //c клиента будут приходить данные от пользователя (пользователь не знает свой Id), нужно создать отдельную модель Dto и смапить ее с методом создания митапа.
+    //реализует О из солида. вместо того, чтобы создавать новый профайл, создается интерфейс аймапвис,
     public class CreateMeetupDto : IMapWith<CreateMeetupCommand>
     {
         public string Name { get; set; }

@@ -1,15 +1,13 @@
 ﻿using FluentValidation;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Common.Behavior
 {
-    //It's nessesary to insert validation into Mediator's pipeline (preinstruction).
+    //It's nessesary to insert validation into Mediator's pipeline (preprocessor).
     //
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {

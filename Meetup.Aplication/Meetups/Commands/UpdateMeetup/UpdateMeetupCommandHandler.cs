@@ -1,9 +1,6 @@
 ﻿using MediatR;
 using Meetups.Aplication.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Meetups.Aplication.Common.Exceptions;
@@ -23,7 +20,7 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
         {
             var entity = await _dbContext.Meetups.FirstOrDefaultAsync(meetup => meetup.Id == request.Id, cancellationToken);
 
-            if (entity == null || entity.UserId != request.UserId)
+            if (entity == null)
             {
                 throw new NotFoundException(nameof(Meetup), request.Id);
             }

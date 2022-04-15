@@ -21,7 +21,6 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
         {
             var meetup = new Meetup
             {
-                UserId = request.UserId,
                 Id = Guid.NewGuid(), //?
                 Name = request.Name,
                 Description = request.Description,
@@ -29,10 +28,10 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
                 Place = request.Place,
                 MeetupDate = request.MeetupDate
             };
-            return meetup.Id;
-
             await _dbContext.Meetups.AddAsync(meetup, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
+
+            return meetup.Id;
         }
 
     }

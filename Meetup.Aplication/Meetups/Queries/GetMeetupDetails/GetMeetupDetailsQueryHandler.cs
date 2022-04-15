@@ -2,10 +2,6 @@
 using MediatR;
 using Meetups.Aplication.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Meetups.Domain;
@@ -28,7 +24,7 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
         {
             var entity = await _dbContext.Meetups.FirstOrDefaultAsync(meetup => meetup.Id == request.Id, cancellationToken);
 
-            if (entity == null || entity.UserId != request.UserId)
+            if (entity == null)
             {
                 throw new NotFoundException(nameof(Meetup), request.Id);
             }
