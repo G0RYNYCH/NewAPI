@@ -41,9 +41,9 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
                 .NotEmpty().GreaterThan(DateTime.Now).WithMessage("The past is not need planing");
         }
 
-        private async Task<bool> Exists(Guid id, CancellationToken cancellationToken)
+        private async Task<bool> Exists(Guid Id, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Meetups.FindAsync(id, cancellationToken);
+            var entity = await _dbContext.Meetups.FindAsync(Id, cancellationToken);
 
             return entity != null;
         }

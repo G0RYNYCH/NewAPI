@@ -16,9 +16,9 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
                 .WithMessage(meetup => $"The Meetup Id {meetup.Id} must not be null")
                 .DependentRules(() =>
                 {
-                    RuleFor(deleteMeetupCommand => deleteMeetupCommand.Id)
+                    RuleFor(meetup => meetup.Id)
                         .MustAsync(Exists)
-                        .WithMessage(deleteMeetupCommand => $"The meetup with Id {deleteMeetupCommand.Id} was not found.");
+                        .WithMessage(meetup => $"The meetup with Id {meetup.Id} was not found.");
                 });
         }
 

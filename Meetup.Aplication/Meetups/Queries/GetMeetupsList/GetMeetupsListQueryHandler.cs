@@ -22,7 +22,7 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupList
         public async Task<MeetupsListViewModel> Handle(GetMeetupsListQuery request, CancellationToken cancellationToken)
         {
             var meetupQuery = await _dbContext.Meetups
-                .ProjectTo<MeetupsDto>(_mapper.ConfigurationProvider)//метод расширения из библиотеки, который проецирует коллекцию в соостветствии с заданной конфигурацией
+                .ProjectTo<MeetupsDto>(_mapper.ConfigurationProvider)//extension method from the library that projects the collection according to the given configuration
                 .ToListAsync(cancellationToken);
 
             return new MeetupsListViewModel { Meetups = meetupQuery };

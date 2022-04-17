@@ -5,7 +5,7 @@ using System;
 
 namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
-    public class MeetupDetailsViewModel : IMapWith<Meetup> //вьюшку деталей митапа мапить с классом митап
+    public class MeetupDetailsViewModel : IMapWith<Meetup> //вьюшку деталей митапа мапит с классом митап
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
