@@ -22,9 +22,9 @@ namespace Meetups.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<MeetupListViewModel>> GetAll() // returns action result with meetupListVM object
+        public async Task<ActionResult<MeetupsListViewModel>> GetAll() // returns action result with meetupListVM object
         {
-            var query = new GetMeetupListQuery();
+            var query = new GetMeetupsListQuery();
             var viewModel = await Mediator.Send(query);
             return Ok(viewModel); //Creates an Microsoft.AspNetCore.Mvc.OkObjectResult object that produces an Microsoft.AspNetCore.Http.StatusCodes.Status200OK response.
         }

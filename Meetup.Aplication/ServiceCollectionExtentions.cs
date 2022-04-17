@@ -2,12 +2,7 @@
 using MediatR;
 using Meetups.Aplication.Common.Behavior;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Meetups.Aplication
 {

@@ -3,9 +3,7 @@ using Meetups.Aplication.Interfaces;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Meetups.Aplication.Common.Exceptions;
 using Microsoft.EntityFrameworkCore;
-using Meetups.Domain;
 
 namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
 {
@@ -19,11 +17,6 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
         public async Task<Unit> Handle(UpdateMeetupCommand request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Meetups.FirstOrDefaultAsync(meetup => meetup.Id == request.Id, cancellationToken);
-
-            if (entity == null)
-            {
-                throw new NotFoundException(nameof(Meetup), request.Id);
-            }
 
             entity.Name = request.Name;
             entity.Description = request.Description;

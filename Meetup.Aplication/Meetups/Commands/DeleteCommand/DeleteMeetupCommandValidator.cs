@@ -1,9 +1,6 @@
 ﻿using FluentValidation;
 using Meetups.Aplication.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,10 +10,7 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
     {
         private readonly IMeetupsDbContext _dbContext;
 
-        public DeleteMeetupCommandValidator(IMeetupsDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        public DeleteMeetupCommandValidator(IMeetupsDbContext dbContext) => _dbContext = dbContext;
 
         public DeleteMeetupCommandValidator()
         {

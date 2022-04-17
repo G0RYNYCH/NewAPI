@@ -2,10 +2,6 @@
 using Meetups.Aplication.Common.Mapping;
 using Meetups.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {

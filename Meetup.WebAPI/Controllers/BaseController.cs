@@ -6,10 +6,7 @@ namespace Meetups.WebAPI.Controllers
     [Route("api/[controller]")]
     public abstract class BaseController : ControllerBase
     {
-        public BaseController(IMediator mediator)
-        {
-            Mediator = mediator;
-        }
+        public BaseController(IMediator mediator) => Mediator = mediator;
 
         protected IMediator Mediator { get; }
     }

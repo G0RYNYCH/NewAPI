@@ -2,15 +2,12 @@
 using Meetups.Aplication.Interfaces;
 using Meetups.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
 {
-    public class CreateMeetupCommandHandler : IRequestHandler<CreateMeetupCommand, Guid> //specify the type of request and type of response to the interface, respectively
+    public class CreateMeetupCommandHandler : IRequestHandler<CreateMeetupCommand, Guid> //specify the type of request and the type of response to the interface, respectively
     {
         private readonly IMeetupsDbContext _dbContext;//to save the changes, we will inject the dependency on the database context into this class through the constructor
 
@@ -21,13 +18,14 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
         {
             var meetup = new Meetup
             {
-                Id = Guid.NewGuid(), //?
+                Id = Guid.NewGuid(),
                 Name = request.Name,
                 Description = request.Description,
                 Speaker = request.Speaker,
                 Place = request.Place,
                 MeetupDate = request.MeetupDate
             };
+
             await _dbContext.Meetups.AddAsync(meetup, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
 

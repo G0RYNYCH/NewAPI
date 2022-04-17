@@ -4,8 +4,6 @@ using Meetups.Aplication.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
-using Meetups.Domain;
-using Meetups.Aplication.Common.Exceptions;
 
 namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
@@ -23,11 +21,6 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
         public async Task<MeetupDetailsViewModel> Handle(GetMeetupDetailsQuery request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Meetups.FirstOrDefaultAsync(meetup => meetup.Id == request.Id, cancellationToken);
-
-            if (entity == null)
-            {
-                throw new NotFoundException(nameof(Meetup), request.Id);
-            }
 
             return _mapper.Map<MeetupDetailsViewModel>(entity);
         }
