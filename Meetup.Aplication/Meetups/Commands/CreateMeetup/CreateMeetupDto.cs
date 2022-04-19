@@ -21,12 +21,7 @@ namespace Meetups.WebAPI.Models
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CreateMeetupDto, CreateMeetupCommand>()
-                .ForMember(meetupCommand => meetupCommand.Name, x => x.MapFrom(meetupDto => meetupDto.Name))
-                .ForMember(meetupCommand => meetupCommand.Description, x => x.MapFrom(meetupDto => meetupDto.Description))
-                .ForMember(meetupCommand => meetupCommand.Speaker, x => x.MapFrom(meetupDto => meetupDto.Speaker))
-                .ForMember(meetupCommand => meetupCommand.Place, x => x.MapFrom(meetupDto => meetupDto.Place))
-                .ForMember(meetupCommand => meetupCommand.MeetupDate, x => x.MapFrom(meetupDto => meetupDto.MeetupDate));
+            profile.CreateMap<CreateMeetupDto, CreateMeetupCommand>();
         }
     }
 }
