@@ -14,7 +14,7 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
         //Unit - is a type meaning empty response
         public async Task<Unit> Handle(DeleteMeetupCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Meetups.FindAsync(request.Id, cancellationToken);
+            var entity = await _dbContext.Meetups.FindAsync(new object[] { request.Id }, cancellationToken);
 
             _dbContext.Meetups.Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);

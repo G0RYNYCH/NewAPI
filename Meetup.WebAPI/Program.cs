@@ -13,13 +13,14 @@ namespace Meetup.WebAPI
             var host = CreateHostBuilder(args).Build();
 
             //database initialization call
-            using(var scope = host.Services.CreateScope())
+            using (var scope = host.Services.CreateScope())
             {
                 var serviceProvider = scope.ServiceProvider;
                 try
                 {
                     var context = serviceProvider.GetRequiredService<MeetupsDbContext>();
                     DbInitializer.Initialize(context);
+
                 }
                 catch (Exception exception)
                 {

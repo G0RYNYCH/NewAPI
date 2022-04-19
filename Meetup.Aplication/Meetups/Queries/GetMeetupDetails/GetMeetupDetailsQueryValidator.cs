@@ -10,6 +10,8 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
     {
         private readonly IMeetupsDbContext _dbContext;
 
+        public GetMeetupDetailsQueryValidator(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+
         public GetMeetupDetailsQueryValidator()
         {
             RuleFor(meetup => meetup.Id).NotEqual(Guid.Empty)

@@ -18,13 +18,7 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
         // реализуем метод мапинг из интерфейса, который будет создавать соответствие между классом MeetupDetailsViewModel и классом  Meetup
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Meetup, MeetupDetailsViewModel>()
-                .ForMember(meetupVm => meetupVm.Name, x => x.MapFrom(meetup => meetup.Name))
-                .ForMember(meetupVm => meetupVm.Description, x => x.MapFrom(meetup => meetup.Description))
-                .ForMember(meetupVm => meetupVm.Speaker, x => x.MapFrom(meetup => meetup.Speaker))
-                .ForMember(meetupVm => meetupVm.Place, x => x.MapFrom(meetup => meetup.Place))
-                .ForMember(meetupVm => meetupVm.MeetupDate, x => x.MapFrom(meetup => meetup.MeetupDate))
-                .ForMember(meetupVm => meetupVm.EditTime, x => x.MapFrom(meetup => meetup.EditTime));
+            profile.CreateMap<Meetup, MeetupDetailsViewModel>();
         }
     }
 }

@@ -10,6 +10,8 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
     {
         private readonly IMeetupsDbContext _dbContext;
 
+        public UpdateMeetupCommandValidator(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+
         public UpdateMeetupCommandValidator()
         {
             RuleFor(updateMeetupCommand => updateMeetupCommand.Id)
