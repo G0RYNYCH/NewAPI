@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Meetups.Aplication.Interfaces;
+using Meetups.Persistence;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -7,9 +7,9 @@ namespace Meetups.Aplication.Meetups.Commands.DeleteCommand
 {
     public class DeleteMeetupCommandHandler : IRequestHandler<DeleteMeetupCommand>
     {
-        private readonly IMeetupsDbContext _dbContext;
+        private readonly MeetupsDbContext _dbContext;
 
-        public DeleteMeetupCommandHandler(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+        public DeleteMeetupCommandHandler(MeetupsDbContext dbContext) => _dbContext = dbContext;
 
         //Unit - is a type meaning empty response
         public async Task<Unit> Handle(DeleteMeetupCommand request, CancellationToken cancellationToken)

@@ -1,17 +1,17 @@
 ﻿using MediatR;
-using Meetups.Aplication.Interfaces;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Meetups.Persistence;
 
 namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
 {
     public class UpdateMeetupCommandHandler : IRequestHandler<UpdateMeetupCommand>
     {
-        private readonly IMeetupsDbContext _dbContext;
+        private readonly MeetupsDbContext _dbContext;
 
-        public UpdateMeetupCommandHandler(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+        public UpdateMeetupCommandHandler(MeetupsDbContext dbContext) => _dbContext = dbContext;
 
         //Unit - is a type meaning an empty response
         public async Task<Unit> Handle(UpdateMeetupCommand request, CancellationToken cancellationToken)

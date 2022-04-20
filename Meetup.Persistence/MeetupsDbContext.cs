@@ -1,11 +1,10 @@
-﻿using Meetups.Aplication.Interfaces;
-using Meetups.Domain;
+﻿using Meetups.Domain;
 using Meetups.Persistence.EntityTypeConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Meetups.Persistence
 {
-    public class MeetupsDbContext : DbContext, IMeetupsDbContext
+    public class MeetupsDbContext : DbContext
     {
         public DbSet<Meetup> Meetups { get; set; }
 

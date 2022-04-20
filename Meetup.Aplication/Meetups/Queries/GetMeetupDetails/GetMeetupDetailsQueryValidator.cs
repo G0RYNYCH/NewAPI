@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Meetups.Aplication.Interfaces;
+using Meetups.Persistence;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,9 +8,9 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
     public class GetMeetupDetailsQueryValidator : AbstractValidator<GetMeetupDetailsQuery>
     {
-        private readonly IMeetupsDbContext _dbContext;
+        private readonly MeetupsDbContext _dbContext;
 
-        public GetMeetupDetailsQueryValidator(IMeetupsDbContext dbContext) => _dbContext = dbContext;
+        public GetMeetupDetailsQueryValidator(MeetupsDbContext dbContext) => _dbContext = dbContext;
 
         public GetMeetupDetailsQueryValidator()
         {

@@ -1,6 +1,5 @@
 using Meetups.Aplication;
 using Meetups.Aplication.Common.Mapping;
-using Meetups.Aplication.Interfaces;
 using Meetups.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +27,7 @@ namespace Meetup.WebAPI
             services.AddAutoMapper(configure =>
             {
                 configure.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));// info about current assembly
-                configure.AddProfile(new AssemblyMappingProfile(typeof(IMeetupsDbContext).Assembly));
+                configure.AddProfile(new AssemblyMappingProfile(typeof(IMapWith<>).Assembly));
             });
             services.AddApplication();
             services.AddPersistance(Configuration);// get configuration through constructor and pass to the mrthod

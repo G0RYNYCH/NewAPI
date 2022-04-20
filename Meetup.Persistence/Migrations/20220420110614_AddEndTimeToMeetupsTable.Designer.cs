@@ -3,15 +3,17 @@ using System;
 using Meetups.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Meetups.Persistence.Migrations
 {
     [DbContext(typeof(MeetupsDbContext))]
-    partial class MeetupsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220420110614_AddEndTimeToMeetupsTable")]
+    partial class AddEndTimeToMeetupsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

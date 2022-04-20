@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using Meetups.Aplication.Interfaces;
+using Meetups.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,10 +9,10 @@ namespace Meetups.Aplication.Meetups.Queries.GetMeetupDetails
 {
     public class GetMeetupDetailsQueryHandler : IRequestHandler<GetMeetupDetailsQuery, MeetupDetailsViewModel>
     {
-        private readonly IMeetupsDbContext _dbContext;
+        private readonly MeetupsDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetMeetupDetailsQueryHandler(IMeetupsDbContext dbContext, IMapper mapper)
+        public GetMeetupDetailsQueryHandler(MeetupsDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

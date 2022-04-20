@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Meetups.Aplication.Interfaces;
 
 namespace Meetups.Persistence
 {
@@ -17,7 +16,6 @@ namespace Meetups.Persistence
             {
                 options.UseNpgsql(connectionString, x => x.MigrationsAssembly("Meetups.Persistence"));
             });
-            services.AddScoped<IMeetupsDbContext>(provider => provider.GetService<MeetupsDbContext>());
 
             return services;
         }

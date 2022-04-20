@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Meetup.Aplication\Meetups.Aplication.csproj" />
+    <ProjectReference Include="..\Meetup.Domain\Meetups.Domain.csproj" />
   </ItemGroup>
 
 </Project>
