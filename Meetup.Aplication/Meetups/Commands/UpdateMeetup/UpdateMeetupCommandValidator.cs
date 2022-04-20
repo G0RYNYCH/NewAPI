@@ -39,8 +39,14 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
                 .NotEmpty()
                 .MaximumLength(50)
                 .WithMessage("Speaker is compalsory to fill in with up to 50 symbols");
+            RuleFor(updateMeetupCommand => updateMeetupCommand.EndTime)
+                .NotEmpty()
+                .GreaterThan(updateMeetupCommand => updateMeetupCommand.MeetupDate)
+                .WithMessage("The past is not need planing");
             RuleFor(updateMeetupCommand => updateMeetupCommand.MeetupDate)
-                .NotEmpty().GreaterThan(DateTime.Now).WithMessage("The past is not need planing");
+                .NotEmpty()
+                .GreaterThan(DateTime.Now)
+                .WithMessage("The past is not need planing");
         }
 
         private async Task<bool> Exists(Guid Id, CancellationToken cancellationToken)

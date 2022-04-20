@@ -11,6 +11,7 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
         public string Description { get; set; }
         public string Speaker { get; set; }
         public string Place { get; set; }
+        public DateTime EndTime { get; set; }
         public DateTime MeetupDate { get; set; }
         public DateTime EditTime { get; set; }
     }

@@ -11,5 +11,6 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
         public string Speaker { get; set; }
         public string Place { get; set; }
         public DateTime MeetupDate { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

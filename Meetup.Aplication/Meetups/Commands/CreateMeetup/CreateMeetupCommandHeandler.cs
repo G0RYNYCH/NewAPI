@@ -23,7 +23,8 @@ namespace Meetups.Aplication.Meetups.Commands.CreateMeetup
                 Description = request.Description,
                 Speaker = request.Speaker,
                 Place = request.Place,
-                MeetupDate = request.MeetupDate
+                MeetupDate = request.MeetupDate,
+                EndTime = request.EndTime
             };
 
             await _dbContext.Meetups.AddAsync(meetup, cancellationToken);

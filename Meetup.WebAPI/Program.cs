@@ -20,7 +20,6 @@ namespace Meetup.WebAPI
                 {
                     var context = serviceProvider.GetRequiredService<MeetupsDbContext>();
                     DbInitializer.Initialize(context);
-
                 }
                 catch (Exception exception)
                 {

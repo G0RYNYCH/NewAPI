@@ -10,6 +10,7 @@ namespace Meetups.Domain
         public string Speaker { get; set; }
         public string Place { get; set; }
         public DateTime MeetupDate { get; set; }
+        public DateTime EndTime { get; set; }
         public DateTime? EditTime { get; set; }
     }
 }

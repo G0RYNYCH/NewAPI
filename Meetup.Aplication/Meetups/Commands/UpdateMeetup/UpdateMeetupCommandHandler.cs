@@ -22,6 +22,7 @@ namespace Meetups.Aplication.Meetups.Commands.UpdateMeetup
             entity.Description = request.Description;
             entity.Speaker = request.Speaker;
             entity.Place = request.Place;
+            entity.EndTime = request.EndTime;
             entity.MeetupDate = request.MeetupDate;
             entity.EditTime = DateTime.Now;
 
